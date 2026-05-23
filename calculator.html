@@ -22,57 +22,58 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </ul>
 </nav>
 
-<div class="container mt-4">
+<div class="container mt-5">
+    div class= "text-center mb-5">
+
     <h1>Neighborhood Housing Calculator</h1>
     <p>Choose a Chicago neighborhood to see average housing prices and taxes.</p>
 </div>
-<label for="neighborhood">
-    Select a neighborhood:
-</label>
 
-<select id="neighborhood">
-    <option value="bronzeville">
-        Bronzeville
-    </option>
+<div class="border rounded p-4 mb-4">
 
-    <option value="pullman">
-        Pullman
-    </option>
+    <label> Select a Neighborhood:</label>
 
-    <option value="north center">
-        North Center
-    </option>
+    <select id="neighborhood"
+    class="form-control mb-4"
+    onchange="showNeighborhoodInfo()">
+<option value="bronzeville">Bronzeville</option>
+<option value="bronzeville">Pullman</option>
+<option value="bronzeville">North Center</option>
+<option value="bronzeville">Fuller Park</option>
 
-    <option value="fuller park">
-        Fuller Park
-    </option>
 </select>
 
-<br><br>
+<h2> Neighborhood Information</h2>
 
-<div id="neighborhoodInfo">
-    <h2>Neighborhood information</h2>
+<p>
+    Average Home Price:
+    <span id="homePrice">______</span>
+</p>
 
-    <p id="homePrice">
-        Average Home Price: _______
-    </p>
+<p>
+    Property Tax Rate:
+    <span id="taxRate">_____</span>
 
-    <p id="propertyTaxRate">
-        Property Tax Rate ________
-    </p>
+</p>
 
-    <p id="mortgageRate">
-        Mortgage Rate: ________
-    </p>
+<p>
+    Mortgage Rate:
+    <span id="mortgageRate">_____</span>
+</p>
+
+<label> Enter Down Payment Percent:</label>
+
+<input type="number"
+id="downPayment"
+class="form-control mb-4">
+
+<button class="btn btn-primary"
+onclick="calculateMortgage()">
+Calculate
+</button>
 
 </div>
-<br>
-
-<label for="downPayment">
-    Enter Down Payment Percent:
-</label>
-
-<input type="number" id="downPayment">
+</div>
 
 </body>
 </html>
