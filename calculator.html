@@ -1,0 +1,78 @@
+ <!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<title>Chicago Neighborhoods in Transition</title>
+</head>
+
+<body>
+<nav class="navbar sticky-top navbar-expand navbar-light bg-light">
+<ul class="navbar-nav d-flex flex-row">
+<li class="nav-item p-2"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item p-2"><a class="nav-link" href="school.html">School</a></li>
+<li class="nav-item p-2"><a class="nav-link" href="travel.html">Travel</a></li>
+<li class="nav-item p-2"><a class="nav-link" href="hobbies.html">Hobbies</a></li>
+<li class="nav-item p-2 active"><a class="nav-link" href="chicago.html">Chicago</a></li>
+</ul>
+</nav>
+
+<div class="container mt-4">
+    <h1>Neighborhood Housing Calculator</h1>
+    <p>Choose a Chicago neighborhood to see average housing prices and taxes.</p>
+</div>
+<label for="neighborhood">
+    Select a neighborhood:
+</label>
+
+<select id="neighborhood">
+    <option value="bronzeville">
+        Bronzeville
+    </option>
+
+    <option value="pullman">
+        Pullman
+    </option>
+
+    <option value="north center">
+        North Center
+    </option>
+
+    <option value="fuller park">
+        Fuller Park
+    </option>
+</select>
+
+<br><br>
+
+<div id="neighborhoodInfo">
+    <h2>Neighborhood information</h2>
+
+    <p id="homePrice">
+        Average Home Price: _______
+    </p>
+
+    <p id="propertyTaxRate">
+        Property Tax Rate ________
+    </p>
+
+    <p id="mortgageRate">
+        Mortgage Rate: ________
+    </p>
+
+</div>
+<br>
+
+<label for="downPayment">
+    Enter Down Payment Percent:
+</label>
+
+<input type="number" id="downPayment">
+
+</body>
+</html>
