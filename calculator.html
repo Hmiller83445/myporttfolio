@@ -35,7 +35,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
     <select id="neighborhood"
     class="form-control mb-4"
-    onchange="showNeighborhoodInfo()">
+    onchange="showHouses()">
 <option value="bronzeville">Bronzeville</option>
 <option value="pullman">Pullman</option>
 <option value="northcenter">North Center</option>
@@ -94,12 +94,14 @@ Calculate
                 "Worker Cottage - $210000",
                 "Renovated Townhome - $295000"
          ];
+         }
          else if (neighborhood == "northcenter") {
             houses = [
                 "Single Family Home - $925000",
                 "Brick Tow Flat - $780000",
                 "Luxury Condo - $540000"
             ];
+         }
 
             else if (neighborhood == "fullerpark") {
                 
@@ -111,8 +113,8 @@ Calculate
             }
 
 let result = "";
-for (let i=0; i <houses.length; id=++) {
-    result = result + houses [i] + <"br">;
+for (let i = 0; i <houses.length; id=++) {
+    result = result + houses [i] + "<br>";
 }
 
 document.getElementById("houseOptions").innerHTML =
