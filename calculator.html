@@ -37,9 +37,9 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     class="form-control mb-4"
     onchange="showNeighborhoodInfo()">
 <option value="bronzeville">Bronzeville</option>
-<option value="bronzeville">Pullman</option>
-<option value="bronzeville">North Center</option>
-<option value="bronzeville">Fuller Park</option>
+<option value="pullman">Pullman</option>
+<option value="northcenter">North Center</option>
+<option value="fullerpark">Fuller Park</option>
 
 </select>
 
@@ -67,11 +67,58 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 id="downPayment"
 class="form-control mb-4">
 
+<h3> Example Houses</h3>
+<p id="houseOptions"></p>
+
 <button class="btn btn-primary"
 onclick="calculateMortgage()">
 Calculate
 </button>
+ 
+<script>
+    function showHouses() {
+        let neighborhood =
+        document.getElementById("neighborhood").value;
+        
+        let houses = [];
+        if (neighborhood == "bronzeville") {
+            houses = [
+                "Greystone - $450000",
+                "Historic Mansion - $850000",
+                "Condo Near the Green Line - $320000"
+        ];
+        }
+         else if (neighborhood == "pullman") {
+            houses = [
+                "Historic Row House - $240000",
+                "Worker Cottage - $210000",
+                "Renovated Townhome - $295000"
+         ];
+         else if (neighborhood == "northcenter") {
+            houses = [
+                "Single Family Home - $925000",
+                "Brick Tow Flat - $780000",
+                "Luxury Condo - $540000"
+            ];
 
+            else if (neighborhood == "fullerpark") {
+                
+                houses = [
+                    "Frame House - $165000",
+                    "Brick Bungalow - $220000",
+                    "Vacant Lot Redevelopment - $120000"
+                ];
+            }
+
+let result = "";
+for (let i=0; i <houses.length; id=++) {
+    result = result + houses [i] + <"br">;
+}
+
+document.getElementById("houseOptions").innerHTML =
+result;
+}
+</script>
 </div>
 </div>
 
