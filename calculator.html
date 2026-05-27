@@ -36,6 +36,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <select id="neighborhood"
     class="form-control mb-4"
     onchange="showHouses()">
+    <option value="">option>Select a Neighborhood</option>
 <option value="bronzeville">Bronzeville</option>
 <option value="pullman">Pullman</option>
 <option value="northcenter">North Center</option>
@@ -92,19 +93,19 @@ Calculate
 '<input type="radio" name="houseType" value="850000"> Historic Mansion - $850000 <br>'+
 '<input type="radio" name="houseType" value="320000"> Condo Near the Green Line - $320000 <br>';
 
-        document.getElementById("homePrice").innerHTML="$450000"
+        document.getElementById("homePrice").innerHTML="$450000";
         document.getElementById("taxRate").innerHTML="2.1%";
         document.getElementById("mortgageRate").innerHTML="6.5%";
         }
          else if (neighborhood == "pullman") {
         document.getElementById("houseOptions").innerHTML =
-'<input type="radio" name="houseType" value="240000"> Historic Row House - 240000 <br>' +
+'<input type="radio" name="houseType" value="240000"> Historic Row House - $240000 <br>' +
 '<input type="radio" name="houseType" value="210000"> Worker Cottage - $210000 <br>'+
 '<input type="radio" name="houseType" value="295000"> Renovated Town Home - $295000 <br>';
 
-        document.getElementById("homePrice").innerHTML="$450000"
-        document.getElementById("taxRate").innerHTML="2.1%";
-        document.getElementById("mortgageRate").innerHTML="6.5%";
+        document.getElementById("homePrice").innerHTML="$240000";
+        document.getElementById("taxRate").innerHTML="2.0%";
+        document.getElementById("mortgageRate").innerHTML="6.3%";
          }
          else if (neighborhood == "northcenter") {
           document.getElementById("houseOptions").innerHTML =
@@ -112,7 +113,7 @@ Calculate
 '<input type="radio" name="houseType" value="780000"> Brick Two Flat - $780000 <br>'+
 '<input type="radio" name="houseType" value="540000"> Luxury Condo - $540000 <br>';
 
-        document.getElementById("homePrice").innerHTML="$925000"
+        document.getElementById("homePrice").innerHTML="$925000";
         document.getElementById("taxRate").innerHTML="2.2%";
         document.getElementById("mortgageRate").innerHTML="6.7%";
          }
@@ -123,7 +124,7 @@ Calculate
 '<input type="radio" name="houseType" value="220000"> Brick Bungalow - $220000 <br>'+
 '<input type="radio" name="houseType" value="120000"> Vacant Lot Redevelopment - $120000 <br>';
 
-        document.getElementById("homePrice").innerHTML="$165000"
+        document.getElementById("homePrice").innerHTML="$165000";
         document.getElementById("taxRate").innerHTML="2.0%";
         document.getElementById("mortgageRate").innerHTML="6.4%";
 
