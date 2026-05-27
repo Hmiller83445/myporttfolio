@@ -74,7 +74,8 @@ class="form-control mb-4">
 onclick="calculateMortgage()">
 Calculate
 </button>
- 
+ </div>
+ >/div>
 <script>
     function showHouses() {
         let neighborhood =
@@ -87,6 +88,9 @@ Calculate
                 "Historic Mansion - $850000",
                 "Condo Near the Green Line - $320000"
         ];
+        document.getElementById("homePrice").innerHTML="$450000"
+        document.getElementById("taxRate").innerHTML="2.1%";
+        document.getElementById("mortgageRate").innerHTML="6.5%";
         }
          else if (neighborhood == "pullman") {
             houses = [
@@ -94,6 +98,7 @@ Calculate
                 "Worker Cottage - $210000",
                 "Renovated Townhome - $295000"
          ];
+
          }
          else if (neighborhood == "northcenter") {
             houses = [
@@ -120,9 +125,46 @@ for (let i = 0; i <houses.length; i++) {
 document.getElementById("houseOptions").innerHTML =
 result;
 }
+function calculateMortgage(){
+let neighborhood = document.getElementById("neghiborhood").value;
+let downPayment = number(document.getElementById("downPayment").value);
+let homePrice = 0;
+let mortgageRate = 0;
+let taxRate = 0;
+
+if(neighborhood=="bronzeville"){
+    homePrice = 450000;
+    mortgageRate = 6.5;
+    taxRate = 2.1;
+}
+
+else if (neighborhood == "pullman"){
+    homePrice =  240000;
+    mortgageRate = 6.3;
+    taxRate = 2.0;
+}
+
+else if (neighborhood == "northcenter"){
+    homePrice = 925000;
+    mortgageRate = 6.7;
+    taxRate = 2.2;
+}
+
+else if (neighborhood == "fullerpark"){
+    homePrice = 165000; 
+    mortgageRate = 6.4; 
+    taxRate = 2.0;
+}
+
+let downPaymentAmount =  homePrice* (downPaymentPercent/100);
+let loanAmount = homePrice - downPaymentAmount;
+let yearlyPropertyTax = homePrice* (taxRate/100);
+document.getElementById("calculatorResults").innerHTML
+"Average Home Price: $" + homePrice + "<br"+
+"Down Payment: $" + downPaymentAmount.toFixed(2) + "<br>" +
+"Estimated Yearly Property Tax:$" + yearlyPropertyTax.toFixed(2);
+}
 </script>
-</div>
-</div>
 
 </body>
 </html>
