@@ -74,8 +74,9 @@ class="form-control mb-4">
 onclick="calculateMortgage()">
 Calculate
 </button>
+<p id = "calculatorResults"></p>
  </div>
- >/div>
+</div>
 <script>
     function showHouses() {
         let neighborhood =
@@ -126,8 +127,8 @@ document.getElementById("houseOptions").innerHTML =
 result;
 }
 function calculateMortgage(){
-let neighborhood = document.getElementById("neghiborhood").value;
-let downPayment = number(document.getElementById("downPayment").value);
+let neighborhood = document.getElementById("neighborhood").value;
+let downPaymentPercent = Number(document.getElementById("downPayment").value);
 let homePrice = 0;
 let mortgageRate = 0;
 let taxRate = 0;
@@ -159,8 +160,8 @@ else if (neighborhood == "fullerpark"){
 let downPaymentAmount =  homePrice* (downPaymentPercent/100);
 let loanAmount = homePrice - downPaymentAmount;
 let yearlyPropertyTax = homePrice* (taxRate/100);
-document.getElementById("calculatorResults").innerHTML
-"Average Home Price: $" + homePrice + "<br"+
+document.getElementById("calculatorResults").innerHTML = 
+"Average Home Price: $" + homePrice + "<br>"+
 "Down Payment: $" + downPaymentAmount.toFixed(2) + "<br>" +
 "Estimated Yearly Property Tax:$" + yearlyPropertyTax.toFixed(2);
 }
