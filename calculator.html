@@ -134,7 +134,7 @@ function calculateMortgage(){
 let neighborhood = document.getElementById("neighborhood").value;
 let downPaymentPercent = Number(document.getElementById("downPayment").value);
 let homePrice = 0;
-let houses = document.getElementByName("houseType");
+let houses = document.getElementsByName("houseType");
 for (let i=0; i <houses.length; i++) {
     if (houses [i].checked) {
         homePrice = Number (houses[i].value);
