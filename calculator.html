@@ -26,8 +26,14 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <div class= "text-center mb-5">
 
     <h1>Neighborhood Housing Calculator</h1>
-    <p>Choose a Chicago neighborhood to see average housing prices and taxes.</p>
+    <p>Choose a Chicago neighborhood to see typical housing prices and taxes.</p>
 </div>
+
+<div class = "alert alert-info">
+    <p>
+        First choose a neighborhood, then select a house style and enter a down payment percentage. When you click CALCULATE, Javascript uses your choices to estimate the down payment, loan amount, and yearly property tax.
+    </p>
+</div> 
 
 <div class="border rounded p-4 mb-4">
 
@@ -36,7 +42,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <select id="neighborhood"
     class="form-control mb-4"
     onchange="showHouses()">
-    <option value="">option>Select a Neighborhood</option>
+    <option value="">Select a Neighborhood</option>
 <option value="bronzeville">Bronzeville</option>
 <option value="pullman">Pullman</option>
 <option value="northcenter">North Center</option>
@@ -47,7 +53,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <h2> Neighborhood Information</h2>
 
 <p>
-    Average Home Price:
+    Typical Home Price:
     <span id="homePrice" class="font-weight-bold"></span>
 </p>
 
@@ -82,6 +88,7 @@ Calculate
  </div>
 </div>
 <script>
+    //Display housing options based on the selected neighborhood
     function showHouses() {
         let neighborhood =
         document.getElementById("neighborhood").value;
@@ -109,7 +116,7 @@ Calculate
          }
          else if (neighborhood == "northcenter") {
           document.getElementById("houseOptions").innerHTML =
-'<input type="radio" name="houseType" value="925000"> Single Family Home - 925000 <br>' +
+'<input type="radio" name="houseType" value="925000"> Single Family Home - $925000 <br>' +
 '<input type="radio" name="houseType" value="780000"> Brick Two Flat - $780000 <br>'+
 '<input type="radio" name="houseType" value="540000"> Luxury Condo - $540000 <br>';
 
@@ -131,6 +138,11 @@ Calculate
             }
 
 }
+//Calculate yearly property tax using parameters and a return value
+function calculateTax(price,rate){
+    return price * (rate/100);
+}
+//Calclate down payment, loan amount, and property tax
 function calculateMortgage(){
 let neighborhood = document.getElementById("neighborhood").value;
 let downPaymentPercent = Number(document.getElementById("downPayment").value);
@@ -166,11 +178,12 @@ else if (neighborhood == "fullerpark"){
 
 let downPaymentAmount =  homePrice* (downPaymentPercent/100);
 let loanAmount = homePrice - downPaymentAmount;
-let yearlyPropertyTax = homePrice* (taxRate/100);
+let yearlyPropertyTax = calculateTax(homePrice,taxRate);
 document.getElementById("calculatorResults").innerHTML = 
-"Average Home Price: $" + homePrice + "<br>"+
-"Down Payment: $" + downPaymentAmount.toFixed(2) + "<br>" +
-"Estimated Yearly Property Tax:$" + yearlyPropertyTax.toFixed(2);
+`Typical Home Price: $${homePrice}<br>
+Down Payment: $${downPaymentAmount.toFixed(2)}<br>
+Estimated Yearly Property Tax:$${yearlyPropertyTax.toFixed(2)}<br>
+Loan Amount: $${loanAmount.toFixed(2)}`;
 }
 </script>
 
