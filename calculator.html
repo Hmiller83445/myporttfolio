@@ -59,8 +59,12 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </div> 
 
 <div class="border rounded p-4 mb-4 bg-white">
+<form id="housingForm">
 
     <label> Select a Neighborhood:</label>
+    
+
+    </form>
 
     <select id="neighborhood"
     class="form-control mb-4"
@@ -102,11 +106,12 @@ class="form-control mb-4">
 
 <p id="houseOptions"></p>
 
-
+</form>
 <button class="btn btn-primary"
 onclick="calculateMortgage()">
 Calculate
 </button>
+
 <div id="calculatorResults" class="alert alert-info mt-3"></div>
  </div>
 </div>
@@ -203,11 +208,12 @@ let downPaymentAmount =  homePrice* (downPaymentPercent/100);
 let loanAmount = homePrice - downPaymentAmount;
 let yearlyPropertyTax = calculateTax(homePrice,taxRate);
 document.getElementById("calculatorResults").innerHTML = 
-`Selected Home Price: $${homePrice}<br>
-Down Payment Percent: $${downPaymentPercent}%<br>
+`Subtotal Home Price: $${homePrice}<br>
+Down Payment Percent: ${downPaymentPercent}%<br>
 Calculated Down Payment: $${downPaymentAmount.toFixed(2)}<br>
 Loan Amount After Down Payment: $${loanAmount.toFixed(2)}<br>
-Estimated Yearly Property Tax:$${yearlyPropertyTax.toFixed(2)}`;
+Tax: $${yearlyPropertyTax.toFixed(2)}<br>
+Final Total: $${(loanAmount + yearlyPropertyTax).toFixed(2)}`
 }
 </script>
 
