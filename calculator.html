@@ -31,7 +31,7 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
 <div class = "alert alert-info">
     <p>
-        First choose a neighborhood, then select a house style and enter a down payment percentage. When you click CALCULATE, Javascript uses your choices to estimate the down payment, loan amount, and yearly property tax.
+        First choose a neighborhood, then select a house style and enter a down payment percentage. When you click CALCULATE, Javascript uses your choices to calculate the down payment amount, loan amount, and yearly property tax.
     </p>
 </div> 
 
@@ -84,7 +84,7 @@ class="form-control mb-4">
 onclick="calculateMortgage()">
 Calculate
 </button>
-<p id = "calculatorResults"></p>
+<div id="calculatorResults" class="alert alert-success mt-3"></div>
  </div>
 </div>
 <script>
@@ -180,10 +180,10 @@ let downPaymentAmount =  homePrice* (downPaymentPercent/100);
 let loanAmount = homePrice - downPaymentAmount;
 let yearlyPropertyTax = calculateTax(homePrice,taxRate);
 document.getElementById("calculatorResults").innerHTML = 
-`Typical Home Price: $${homePrice}<br>
-Down Payment: $${downPaymentAmount.toFixed(2)}<br>
+`Selected Home Price: $${homePrice}<br>
+Calculated Down Payment: $${downPaymentAmount.toFixed(2)}<br>
+Loan Amount After Down Payment: $${loanAmount.toFixed(2)}`;
 Estimated Yearly Property Tax:$${yearlyPropertyTax.toFixed(2)}<br>
-Loan Amount: $${loanAmount.toFixed(2)}`;
 }
 </script>
 
